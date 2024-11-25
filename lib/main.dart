@@ -73,16 +73,16 @@ class _HomePageState extends State<HomePage> {
                 children: [
                   Table(
                     defaultColumnWidth: const FixedColumnWidth(200),
-                    border: TableBorder.all(borderRadius: const BorderRadius.only(bottomLeft: Radius.circular(10.0),topLeft: Radius.circular(10.0))),
                     defaultVerticalAlignment: TableCellVerticalAlignment.middle,
+                    border: const TableBorder(right: BorderSide(color: Colors.white,width: 2.0)),
                     children: [
                       TableRow(
                         decoration: const BoxDecoration(
                           color: Colors.blueAccent,
-                          borderRadius: BorderRadius.only(topLeft: Radius.circular(10.0),bottomLeft: Radius.circular(10.0)),
+                          borderRadius: BorderRadius.only(topLeft: Radius.circular(10.0),),
                         ),
                         children: [
-                          Text(tableHeaderList.first.toString(),textAlign: TextAlign.center,style: const TextStyle(color: Colors.white,fontWeight: FontWeight.bold),),
+                          SizedBox(height:40.0,child: Center(child: Text(tableHeaderList.first.toString(),textAlign: TextAlign.center,style: const TextStyle(color: Colors.white,fontWeight: FontWeight.bold),))),
                         ]
                       ),
 
@@ -94,13 +94,17 @@ class _HomePageState extends State<HomePage> {
                       controller: c1,
                       child: Table(
                         defaultColumnWidth: const FixedColumnWidth(200),
-                        border: TableBorder.all(borderRadius: const BorderRadius.only(bottomLeft: Radius.circular(10.0),topLeft: Radius.circular(10.0))),
                         defaultVerticalAlignment: TableCellVerticalAlignment.middle,
+                        border: const TableBorder(right: BorderSide(color: Colors.white,width: 2.0)),
                         children: [
                           ...List.generate(200, (index) {
-                            return const TableRow(
-                                children: [
-                                  Text("data",textAlign: TextAlign.center,),
+                            return TableRow(
+                                decoration: BoxDecoration(
+                                  color: index % 2 == 0 ? Colors.blueAccent.withOpacity(0.4) : Colors.blueAccent.withOpacity(0.6),
+                                  border: Border(bottom: BorderSide(width: 2.0,color: Colors.white))
+                                ),
+                                children: const [
+                                  SizedBox(height: 40.0,child: Center(child: Text("data",textAlign: TextAlign.center,))),
                                 ]
                             );
                           },)
@@ -110,12 +114,16 @@ class _HomePageState extends State<HomePage> {
                   ),
                   Table(
                     defaultColumnWidth: const FixedColumnWidth(200),
-                    border: TableBorder.all(borderRadius: const BorderRadius.only(bottomLeft: Radius.circular(10.0),topLeft: Radius.circular(10.0))),
                     defaultVerticalAlignment: TableCellVerticalAlignment.middle,
+                    border: const TableBorder(right: BorderSide(color: Colors.white,width: 2.0)),
                     children: [
                       TableRow(
+                          decoration: const BoxDecoration(
+                            color: Colors.blueAccent,
+                            borderRadius: BorderRadius.only(bottomLeft: Radius.circular(10.0))
+                          ),
                           children: [
-                            Text(tableHeaderList.first.toString(),textAlign: TextAlign.center,),
+                            SizedBox(height: 40.0,child: Center(child: Text(tableHeaderList.first.toString(),textAlign: TextAlign.center,style: const TextStyle(color: Colors.white,fontWeight: FontWeight.bold),))),
                           ]
                       ),
 
@@ -130,12 +138,16 @@ class _HomePageState extends State<HomePage> {
                     children: [
                       Table(
                       defaultColumnWidth: const FixedColumnWidth(200),
-                        border: TableBorder.all(borderRadius: const BorderRadius.only(bottomRight: Radius.circular(10.0),topRight: Radius.circular(10.0))),
                       defaultVerticalAlignment: TableCellVerticalAlignment.middle,
+                      border: TableBorder(right: BorderSide(color: Colors.white,width: 2.0)),
                       children: [
                         TableRow(
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.only(topRight: Radius.circular(10.0)),
+                            color: Colors.blueAccent,
+                          ),
                             children: List.generate(tableHeaderList.length, (index) {
-                              return Text(tableHeaderList[index].toString());
+                              return SizedBox(height: 40.0,child: Center(child: Text(tableHeaderList[index].toString(),style: const TextStyle(color: Colors.white,fontWeight: FontWeight.bold),)));
                             },)
                         ),
                       ],
@@ -146,23 +158,26 @@ class _HomePageState extends State<HomePage> {
                           scrollDirection: Axis.vertical,
                           child: Table(
                             defaultColumnWidth: const FixedColumnWidth(200),
-                            border: TableBorder.all(borderRadius: BorderRadius.circular(10.0)),
                             defaultVerticalAlignment: TableCellVerticalAlignment.middle,
                             children:  [
                               ...List.generate(200, (index) {
-                                return const TableRow(
-                                  children: [
-                                    Text("datadatadatadatadatadatadatadatadatadatadatadatadatadata"),
-                                    Text("data"),
-                                    Text("data"),
-                                    Text("data"),
-                                    Text("data"),
-                                    Text("data"),
-                                    Text("data"),
-                                    Text("data"),
-                                    Text("data"),
-                                    Text("data"),
-                                    Text("data"),
+                                return TableRow(
+                                  decoration: BoxDecoration(
+                                    color: index % 2 == 0 ? Colors.blueAccent.withOpacity(0.4) : Colors.blueAccent.withOpacity(0.6),
+                                      border: Border(bottom: BorderSide(width: 2.0,color: Colors.white))
+                                  ),
+                                  children: const [
+                                    SizedBox(height: 40.0,child: Center(child: Text("data",textAlign: TextAlign.center,))),
+                                    SizedBox(height: 40.0,child: Center(child: Text("data",textAlign: TextAlign.center,))),
+                                    SizedBox(height: 40.0,child: Center(child: Text("data",textAlign: TextAlign.center,))),
+                                    SizedBox(height: 40.0,child: Center(child: Text("data",textAlign: TextAlign.center,))),
+                                    SizedBox(height: 40.0,child: Center(child: Text("data",textAlign: TextAlign.center,))),
+                                    SizedBox(height: 40.0,child: Center(child: Text("data",textAlign: TextAlign.center,))),
+                                    SizedBox(height: 40.0,child: Center(child: Text("data",textAlign: TextAlign.center,))),
+                                    SizedBox(height: 40.0,child: Center(child: Text("data",textAlign: TextAlign.center,))),
+                                    SizedBox(height: 40.0,child: Center(child: Text("data",textAlign: TextAlign.center,))),
+                                    SizedBox(height: 40.0,child: Center(child: Text("data",textAlign: TextAlign.center,))),
+                                    SizedBox(height: 40.0,child: Center(child: Text("data",textAlign: TextAlign.center,))),
                                   ]
                                 );
                               },)
@@ -172,12 +187,15 @@ class _HomePageState extends State<HomePage> {
                       ),
                       Table(
                         defaultColumnWidth: const FixedColumnWidth(200),
-                        border: TableBorder.all(borderRadius: BorderRadius.circular(10.0)),
                         defaultVerticalAlignment: TableCellVerticalAlignment.middle,
                         children: [
                           TableRow(
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.only(bottomRight: Radius.circular(10.0)),
+                                color: Colors.blueAccent,
+                              ),
                               children: List.generate(tableHeaderList.length, (index) {
-                                return Text(tableHeaderList[index].toString());
+                                return SizedBox(height: 40.0,child: Center(child: Text(tableHeaderList[index].toString(),style: const TextStyle(color: Colors.white,fontWeight: FontWeight.bold),)));
                               },)
                           ),
                         ],
