@@ -101,7 +101,7 @@ class _HomePageState extends State<HomePage> {
                             return TableRow(
                                 decoration: BoxDecoration(
                                   color: index % 2 == 0 ? Colors.blueAccent.withOpacity(0.4) : Colors.blueAccent.withOpacity(0.6),
-                                  border: Border(bottom: BorderSide(width: 2.0,color: Colors.white))
+                                  border: const Border(bottom: BorderSide(width: 2.0,color: Colors.white))
                                 ),
                                 children: const [
                                   SizedBox(height: 40.0,child: Center(child: Text("data",textAlign: TextAlign.center,))),
@@ -139,10 +139,10 @@ class _HomePageState extends State<HomePage> {
                       Table(
                       defaultColumnWidth: const FixedColumnWidth(200),
                       defaultVerticalAlignment: TableCellVerticalAlignment.middle,
-                      border: TableBorder(right: BorderSide(color: Colors.white,width: 2.0)),
+                      border: const TableBorder(right: BorderSide(color: Colors.white,width: 2.0)),
                       children: [
                         TableRow(
-                          decoration: BoxDecoration(
+                          decoration: const BoxDecoration(
                             borderRadius: BorderRadius.only(topRight: Radius.circular(10.0)),
                             color: Colors.blueAccent,
                           ),
@@ -164,7 +164,7 @@ class _HomePageState extends State<HomePage> {
                                 return TableRow(
                                   decoration: BoxDecoration(
                                     color: index % 2 == 0 ? Colors.blueAccent.withOpacity(0.4) : Colors.blueAccent.withOpacity(0.6),
-                                      border: Border(bottom: BorderSide(width: 2.0,color: Colors.white))
+                                      border: const Border(bottom: BorderSide(width: 2.0,color: Colors.white))
                                   ),
                                   children: const [
                                     SizedBox(height: 40.0,child: Center(child: Text("data",textAlign: TextAlign.center,))),
@@ -190,7 +190,7 @@ class _HomePageState extends State<HomePage> {
                         defaultVerticalAlignment: TableCellVerticalAlignment.middle,
                         children: [
                           TableRow(
-                              decoration: BoxDecoration(
+                              decoration: const BoxDecoration(
                                 borderRadius: BorderRadius.only(bottomRight: Radius.circular(10.0)),
                                 color: Colors.blueAccent,
                               ),
