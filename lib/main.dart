@@ -38,7 +38,10 @@ class _HomePageState extends State<HomePage> {
 
     scrollController1.addListener((){
       if(scrollController1.offset != scrollController2.offset){
+        print("Didn't match offset");
         scrollController2.jumpTo(scrollController1.offset);
+      }else{
+        print("Match offset");
       }
     });
 
