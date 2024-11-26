@@ -26,19 +26,27 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
 
-  LinkedScrollControllerGroup controllerGroup = LinkedScrollControllerGroup();
-  ScrollController scrollController = ScrollController();
-
-  ScrollController? c1;
-  ScrollController? c2;
+  late final ScrollController scrollController1;
+  late final ScrollController scrollController2;
 
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
+    scrollController1 = ScrollController();
+    scrollController2 = ScrollController();
 
-    c1 = controllerGroup.addAndGet();
-    c2 = controllerGroup.addAndGet();
+    scrollController1.addListener((){
+      if(scrollController1.offset != scrollController2.offset){
+        scrollController2.jumpTo(scrollController1.offset);
+      }
+    });
+
+    scrollController2.addListener((){
+      if(scrollController2.offset != scrollController1.offset){
+        scrollController1.jumpTo(scrollController2.offset);
+      }
+    });
 
   }
 
@@ -91,7 +99,7 @@ class _HomePageState extends State<HomePage> {
                   Expanded(
                     child: SingleChildScrollView(
                       scrollDirection: Axis.vertical,
-                      controller: c1,
+                      controller: scrollController1,
                       child: Table(
                         defaultColumnWidth: const FixedColumnWidth(200),
                         defaultVerticalAlignment: TableCellVerticalAlignment.middle,
@@ -154,8 +162,8 @@ class _HomePageState extends State<HomePage> {
                       ),
                       Expanded(
                         child: SingleChildScrollView(
-                          controller: c2,
                           scrollDirection: Axis.vertical,
+                          controller: scrollController2,
                           child: Table(
                             defaultColumnWidth: const FixedColumnWidth(200),
                             defaultVerticalAlignment: TableCellVerticalAlignment.middle,
